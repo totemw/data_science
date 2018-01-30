@@ -1,3 +1,5 @@
+import numpy as np
+
 class Operation:
     def __init__(self, input_nodes=[]):
         self.input_nodes = input_nodes
@@ -70,7 +72,7 @@ def traverse_postorder(operation):
     nodes_postorder = []
 
     def recurse(node):
-        if isinstance(node, Opertion):
+        if isinstance(node, Operation):
             for input_node in node.input_nodes:
                 recurse(input_node)
         nodes_postorder.append(node)
